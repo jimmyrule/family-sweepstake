@@ -1,8 +1,8 @@
 id,prize,team,player,amount,rules
-1,Champion,,,-,The winning team in the final.
-2,Runner-up,,,-,The losing team in the final.
-3,Golden glove,,,-,First to save a penalty outside of a penalty shootout.
-4,Barn door,,,-,Eliminated by a penalty shootout with fewest converted penalties. Prize split between winner and runner-up if there are no penalty shootouts.
-5,Hot head,,,-,Total yellow and red cards. Most yellow cards and fouls committed will decide a tie-break.
-6,Leaky bucket,,,-,Most goals conceded excluding penalty shoot-outs. Fewest games played will decide a tie-break.
-7,Early bath,,,-,Eliminated at the group stage with fewest points. Fewest goals scored and most goals conceded will decide a tie-break.
+1,🥇 Winner,,,£25,The winning team in the final
+2,🥈 Runner-up,,,£15,The losing team in the final
+3,🥉 Third Place,,,£10,The winning team in the 3rd/4th place play-off
+4,🚫 Disciplinary,,,£10,Most yellow and red cards - fouls committed will decide a tie-break
+5,🥅 Shootout Fail,,,£10,Eliminated by penalty shootout with fewest penalties scored - prize split between winner and runner-up if there are no penalty shootouts
+7,🪣 Leaky Bucket,,,£5,Most goals conceded (excluding penalty shoot-outs) - fewest goals scored/games played will decide a tie-break
+8,🛁 Early Bath,,,£5,Eliminated at the group stage with fewest points - fewest goals scored/most goals conceded will decide a tie-break

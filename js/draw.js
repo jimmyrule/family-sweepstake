@@ -55,94 +55,64 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
             const tdName = document.createElement('td');
             tdName.textContent = row.name;
 
-            // Add label to name column if the player has a prize winning team 1
-            if (lookupMap[row.team1] && lookupMap[row.team1].prize === 'TRUE') {
-                const label3 = document.createElement('i');
-                label3.classList.add('fas');
-                label3.classList.add('fa-money-bill-wave');
-                label3.classList.add('prize');
-                tdName.appendChild(label3);
-            }
-
-            // Add label to name column if the player has a prize winning team 2
-            if (lookupMap[row.team2] && lookupMap[row.team2].prize === 'TRUE') {
-                const label4 = document.createElement('i');
-                label4.classList.add('fas');
-                label4.classList.add('fa-money-bill-wave');
-                label4.classList.add('prize');
-                tdName.appendChild(label4);
-            }
+            // Add prize icons dynamically
+            ['team1', 'team2', 'team3'].forEach(teamKey => {
+                const teamId = row[teamKey];
+                if (teamId && lookupMap[teamId] && lookupMap[teamId].prize === 'TRUE') {
+                    const icon = document.createElement('i');
+                    icon.classList.add('fas', 'fa-money-bill-wave', 'prize');
+                    tdName.appendChild(icon);
+                }
+            });
 
             tr.appendChild(tdName);
 
-            // Team 1 column
-            const tdTeam1 = document.createElement('td');
-            tdTeam1.classList.add('text-center');
-            tdTeam1.classList.add('text-small');
-            if (lookupMap[row.team1] && lookupMap[row.team1].url) {
-                const img1 = document.createElement('img');
-                img1.src = '/assets/images/' + lookupMap[row.team1].url + '.svg';
-                img1.alt = lookupMap[row.team1].name;
-                img1.width = '40'
-                tdTeam1.appendChild(img1);
+            // Render team columns dynamically
+            const teamKeys = ['team1', 'team2', 'team3'];
 
-                const label1 = document.createElement('p');
-                label1.textContent = lookupMap[row.team1].name;
-                tdTeam1.appendChild(label1);
+            teamKeys.forEach((teamKey, index) => {
+                const teamId = row[teamKey];
 
-                if (lookupMap[row.team1].eliminated === 'TRUE') {
-                    tdTeam1.classList.add('eliminated');
-                }
-            } else {
-                const placeholder = document.createElement('i');
-                placeholder.classList.add('fas');
-                placeholder.classList.add('fa-volleyball-ball');
-                placeholder.classList.add('fa-2x');
-                placeholder.classList.add('text-dark-grey');
-                tdTeam1.appendChild(placeholder);
+                // Skip team2/team3 if they don't exist in the data at all
+                if (!(teamKey in row)) return;
 
-                const placeholderLabel = document.createElement('p');
-                placeholderLabel.textContent = "tbc";
-                placeholderLabel.classList.add('text-dark-grey');
-                tdTeam1.appendChild(placeholderLabel);
-            }
-            tr.appendChild(tdTeam1);
+                const td = document.createElement('td');
+                td.classList.add('text-center', 'text-small');
 
-            // Only create the Team 2 column if 'team2' exists in the row data
-            if ('team2' in row) {
-                const tdTeam2 = document.createElement('td');
-                tdTeam2.classList.add('text-center', 'text-small');
+                if (teamId && lookupMap[teamId] && lookupMap[teamId].url) {
+                    const team = lookupMap[teamId];
 
-                if (lookupMap[row.team2] && lookupMap[row.team2].url) {
-                    const img2 = document.createElement('img');
-                    img2.src = '/assets/images/' + lookupMap[row.team2].url + '.svg';
-                    img2.alt = lookupMap[row.team2].name;
-                    img2.width = '40';
-                    tdTeam2.appendChild(img2);
+                    const img = document.createElement('img');
+                    img.src = '/assets/images/' + team.url + '.svg';
+                    img.alt = team.name;
+                    img.width = 40;
+                    td.appendChild(img);
 
-                    const label2 = document.createElement('p');
-                    label2.textContent = lookupMap[row.team2].name;
-                    tdTeam2.appendChild(label2);
+                    const label = document.createElement('p');
+                    label.textContent = team.name;
+                    td.appendChild(label);
 
-                    if (lookupMap[row.team2].eliminated === 'TRUE') {
-                        tdTeam2.classList.add('eliminated');
+                    if (team.eliminated === 'TRUE') {
+                        td.classList.add('eliminated');
                     }
                 } else {
-                    tdTeam2.textContent = '';
-                    // You can uncomment these lines to add a fallback display if desired
-                    // const placeholder = document.createElement('i');
-                    // placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
-                    // tdTeam2.appendChild(placeholder);
-                    //
-                    // const placeholderLabel = document.createElement('p');
-                    // placeholderLabel.textContent = "tbc";
-                    // placeholderLabel.classList.add('text-dark-grey');
-                    // tdTeam2.appendChild(placeholderLabel);
+                    // Only show placeholder for team1 (to preserve original behaviour)
+                    if (index === 0) {
+                        const placeholder = document.createElement('i');
+                        placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
+                        td.appendChild(placeholder);
+
+                        const placeholderLabel = document.createElement('p');
+                        placeholderLabel.textContent = "tbc";
+                        placeholderLabel.classList.add('text-dark-grey');
+                        td.appendChild(placeholderLabel);
+                    } else {
+                        td.textContent = '';
+                    }
                 }
 
-                tr.appendChild(tdTeam2);
-            }
-
+                tr.appendChild(td);
+            });
 
             // Append row to table body
             tbody.appendChild(tr);

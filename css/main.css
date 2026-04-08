@@ -1,22 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Permanent+Marker&display=swap');
 
 :root {
-  --border-grey: #ced4da;
-  --bg: #f8f9fa;
-  --brand: #4361EE;
-  --grey: #EBF2FA;
-  --primary: #3F37C9;
-  --primary-dark: #3A0CA3;
-  --text-normal: #212529;
+  --text: hsl(0, 0%, 5%);
+  --text-muted: hsl(0, 0%, 50%);
+  --bg-dark: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 95%);
+  --bg-light: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 85%);
+  --primary: hsl(243, 57%, 50%);
+  --primary-dark: hsl(243, 57%, 40%);
+  --secondary: hsl(229, 83%, 60%);
+  --danger-text: hsl(354, 61%, 21%);
+  --danger-bg: hsl(355, 70%, 91%);
+  --danger-border: hsl(354, 71%, 81%);
+  --warning-text: hsl(45, 94%, 21%);
+  --warning-bg: hsl(46, 100%, 90%);
+  --warning-border: hsl(45, 100%, 81%);
+  --success-text: hsl(153, 69%, 13%);
+  --success-bg: hsl(153, 31%, 86%);
+  --success-borer: hsl(153, 31%, 73%);
+  --info-text: hsl(190, 90%, 20%);
+  --info-bg: hsl(191, 88%, 90%);
+  --info-border: hsl(190, 88%, 80%);
+  --ff: "Inter", sans-serif;
+  --fs: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 2rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.5rem;
+  --spacing-10: 3rem;
+  --spacing-11: 3.5rem;
+  --spacing-12: 4rem;
+  --spacing-13: 4.5rem;
+  --spacing-14: 8rem;
 }
 
-html, body {
-  font-family: "Inter", sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--ff);
+  font-size: var(--fs-lg);
   font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  color: var(--text-normal);
-  background-color: var(--bg);
+  line-height: var(--spacing-6);
+  color: var(--text);
 }
 
 a {
@@ -38,19 +75,15 @@ a:hover, a:active, a:focus {
 }
 
 .navbar-brand-icon {
-  color: var(--brand);
+  color: var(--secondary);
 }
 
 #breadcrumb {
   border-bottom: none;
 }
 
-.text-grey {
-  color: var(--grey);
-}
-
-.text-dark-grey {
-  color: var(--bs-gray-500) !important;
+.text-muted {
+  color: var(--text-muted) !important;
 }
 
 .text-small {
@@ -64,7 +97,7 @@ a:hover, a:active, a:focus {
 tr {
   background-color: inherit;
   border: 0em solid white;
-  border-bottom: 1px solid var(--border-grey);
+  border-bottom: 1px solid var(--border);
 }
 
 tr:last-child {
@@ -82,10 +115,6 @@ table p {
 .prize {
   color: green;
   margin-left: 0.5em;
-}
-
-.help-text {
-  color: var(--bs-gray-500);
 }
 
 .no-list-style {

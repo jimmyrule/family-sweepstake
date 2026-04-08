@@ -68,7 +68,7 @@
                 tdTeam.appendChild(img);
             } else {
                 const placeholder = document.createElement('i');
-                placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
+                placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-muted');
                 placeholder.setAttribute('data-bs-toggle', 'tooltip');
                 placeholder.setAttribute('data-bs-placement', 'right');
                 placeholder.setAttribute('title', "tbc");
@@ -84,7 +84,7 @@
                 tdPlayer.textContent = player.name;
             } else {
                 tdPlayer.textContent = 'Player';
-                tdPlayer.classList.add('text-dark-grey');
+                tdPlayer.classList.add('text-muted');
             }
             tr.appendChild(tdPlayer);
 
@@ -97,7 +97,7 @@
             // Rules column
             const tdRules = document.createElement('td');
             const icon = document.createElement('i');
-            icon.classList.add('fa-regular', 'fa-circle-question', 'ms-2', 'help-text');
+            icon.classList.add('fa-regular', 'fa-circle-question', 'ms-2', 'text-muted');
             icon.setAttribute('data-bs-toggle', 'tooltip');
             icon.setAttribute('data-bs-placement', 'right');
             icon.setAttribute('title', row.rules);

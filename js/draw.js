@@ -99,12 +99,12 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
                     // Only show placeholder for team1 (to preserve original behaviour)
                     if (index === 0) {
                         const placeholder = document.createElement('i');
-                        placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
+                        placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-muted');
                         td.appendChild(placeholder);
 
                         const placeholderLabel = document.createElement('p');
                         placeholderLabel.textContent = "tbc";
-                        placeholderLabel.classList.add('text-dark-grey');
+                        placeholderLabel.classList.add('text-muted');
                         td.appendChild(placeholderLabel);
                     } else {
                         td.textContent = '';

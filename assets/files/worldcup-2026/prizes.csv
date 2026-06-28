@@ -5,4 +5,4 @@ id,prize,team,player,amount,rules
 4,🚫 Disciplinary,,,£10,Most yellow and red cards - fouls committed will decide a tie-break
 5,🥅 Shootout Fail,,,£10,Eliminated by penalty shootout with fewest penalties scored - prize split between winner and runner-up if there are no penalty shootouts
 7,🪣 Leaky Bucket,,,£5,Most goals conceded (excluding penalty shoot-outs) - fewest goals scored/games played will decide a tie-break
-8,🛁 Early Bath,,,£5,Eliminated at the group stage with fewest points - fewest goals scored/most goals conceded will decide a tie-break
+8,🛁 Early Bath,33,5,£5,Eliminated at the group stage with fewest points - fewest goals scored/most goals conceded will decide a tie-break

@@ -38,7 +38,7 @@ id,name,url,group,eliminated,prize
 37,Saudi Arabia,SAU,H,TRUE,FALSE
 38,Scotland,SCO,C,TRUE,FALSE
 39,Senegal,SEN,I,FALSE,FALSE
-40,South Africa,RSA,A,FALSE,FALSE
+40,South Africa,RSA,A,TRUE,FALSE
 41,Spain,ESP,H,FALSE,FALSE
 42,Sweden,SWE,F,FALSE,FALSE
 43,Switzerland,SUI,B,FALSE,FALSE

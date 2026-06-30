@@ -68,7 +68,7 @@
                 tdTeam.appendChild(img);
             } else {
                 const placeholder = document.createElement('i');
-                placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-muted');
+                placeholder.classList.add('fa-regular', 'fa-flag', 'fa-xl', 'text-muted');
                 placeholder.setAttribute('data-bs-toggle', 'tooltip');
                 placeholder.setAttribute('data-bs-placement', 'right');
                 placeholder.setAttribute('title', "tbc");
@@ -83,7 +83,7 @@
             if (player && player.name) {
                 tdPlayer.textContent = player.name;
             } else {
-                tdPlayer.textContent = 'Player';
+                tdPlayer.textContent = '-';
                 tdPlayer.classList.add('text-muted');
             }
             tr.appendChild(tdPlayer);

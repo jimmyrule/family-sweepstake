@@ -99,7 +99,7 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
                     // Only show placeholder for team1 (to preserve original behaviour)
                     if (index === 0) {
                         const placeholder = document.createElement('i');
-                        placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-muted');
+                        placeholder.classList.add('fa-regular', 'fa-flag', 'fa-xl', 'text-muted');
                         td.appendChild(placeholder);
 
                         const placeholderLabel = document.createElement('p');
